@@ -15,10 +15,18 @@
     <div class="row">
       <div class="col align-self-center">
         <p>
-          <% outputLines.forEach(function(line){ %>
-            <%= line %>
-              <br>
-          <% }); %>
+          <% if (error) { %>
+            <h2>
+              <%= error %>
+                <p>
+                  <a href="https://puresox.cn/">再来一次</a>
+                </p>
+            </h2>
+            <% } else { %>
+              <% outputLines.forEach(function(line){ %>
+                <%= line %>
+                  <br>
+                  <% });} %>
         </p>
       </div>
     </div>

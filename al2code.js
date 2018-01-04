@@ -19,7 +19,7 @@ function register2rsrd(register) {
       r = '10';
       break;
     default:
-      throw new Error(`${lineNum} : can not recognize${register}`);
+      throw new Error(`第${lineNum}行 : 无法识别${register}`);
   }
   return r;
 }
@@ -39,7 +39,7 @@ function B2H(binary, num) {
   /** 不足补位 */
   const hArray = h.split('');
   if (hArray.length > num) {
-    throw new Error(`${lineNum} : 进制转换溢出。`);
+    throw new Error(`第${lineNum}行 : 进制转换溢出。`);
   } else if (hArray.length < num) {
     let zeroString = '';
     for (let index = 0; index < num - hArray.length; index += 1) {
@@ -133,7 +133,7 @@ function getLineString(line) {
     if (hArray.length === 3 && hArray[2] === 'H') {
       lineString += alArray[1].substring(0, 2);
     } else {
-      throw new Error(`${lineNum} : can not recognize${alArray[1]}`);
+      throw new Error(`第${lineNum}行 : 无法识别${alArray[1]}`);
     }
   }
   return lineString;
