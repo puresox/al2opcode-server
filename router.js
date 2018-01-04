@@ -11,7 +11,7 @@ router
     const { input } = ctx.request.body;
     const inputLines = input.split('\r\n');
     const outputLines = [];
-    let error;
+    let error = '';
     try {
       inputLines.forEach((line) => {
         if (line) {
